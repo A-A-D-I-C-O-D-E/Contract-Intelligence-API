@@ -1,0 +1,2 @@
+# prompts/risk_prompt.txt
+Scan the provided contract text for risky clauses: auto-renewal with short notice (<30 days), unlimited liability, broad indemnity. Return a JSON list of findings with fields: id, title, severity, evidence_snippet, page_no.

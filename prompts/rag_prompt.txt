@@ -1,0 +1,2 @@
+# prompts/rag_prompt.txt
+You are given multiple context chunks from a contract. Answer the question using ONLY the provided context. If the answer cannot be found in the context, reply "Not found in provided documents." Provide short answer and include citations in the form (document_id:page).

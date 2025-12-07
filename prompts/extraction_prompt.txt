@@ -1,0 +1,15 @@
+# prompts/extraction_prompt.txt
+Extract the following fields from the provided contract text and return JSON only:
+- parties (array of strings)
+- effective_date (ISO or readable)
+- term
+- governing_law
+- payment_terms
+- termination
+- auto_renewal
+- confidentiality
+- indemnity
+- liability_cap {amount, currency}
+- signatories [{name, title}]
+
+If a field is absent, return null or empty array. Return only JSON (no explanatory text).

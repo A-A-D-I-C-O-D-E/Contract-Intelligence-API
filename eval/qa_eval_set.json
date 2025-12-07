@@ -1,0 +1,52 @@
+[
+  {
+    "question": "Who are the parties involved in this NDA?",
+    "expected": "The parties involved in this NDA are the AUDITEE and the AUDITOR.",
+    "document_id": "0b5fe132-ba76-4d0f-b663-f7418312af75"
+  },
+  {
+    "question": "What is the governing law for this agreement?",
+    "expected": "laws of india",
+    "document_id": "0b5fe132-ba76-4d0f-b663-f7418312af75"
+  },
+  {
+    "question": "How long does the NDA remain valid?",
+    "expected": "one year",
+    "document_id": "0b5fe132-ba76-4d0f-b663-f7418312af75"
+  },
+  {
+    "question": "What is considered confidential information under this agreement?",
+    "expected": "all information and materials furnished by either party",
+    "document_id": "0b5fe132-ba76-4d0f-b663-f7418312af75"
+  },
+  {
+    "question": "Can the auditor disclose confidential information to a third party?",
+    "expected": "not without the express written consent of the auditee",
+    "document_id": "0b5fe132-ba76-4d0f-b663-f7418312af75"
+  },
+  {
+    "question": "Are there any exceptions to confidentiality obligations?",
+    "expected": "information independently developed, publicly available, known to auditor, or received from third party",
+    "document_id": "0b5fe132-ba76-4d0f-b663-f7418312af75"
+  },
+  {
+    "question": "What happens if the auditor breaches confidentiality?",
+    "expected": "auditee entitled to specific performance and damages",
+    "document_id": "0b5fe132-ba76-4d0f-b663-f7418312af75"
+  },
+  {
+    "question": "Does the NDA include non-solicitation clauses?",
+    "expected": "yes, auditor shall not solicit auditee’s employees or consultants for 2 years",
+    "document_id": "0b5fe132-ba76-4d0f-b663-f7418312af75"
+  },
+  {
+    "question": "What is the arbitration process if a dispute arises?",
+    "expected": "each party appoints one arbitrator and a third is appointed by them, venue in india",
+    "document_id": "0b5fe132-ba76-4d0f-b663-f7418312af75"
+  },
+  {
+    "question": "When does this NDA become effective?",
+    "expected": "on the date of its signing by both parties",
+    "document_id": "0b5fe132-ba76-4d0f-b663-f7418312af75"
+  }
+]
