@@ -11,29 +11,13 @@ A production-ish FastAPI service that:
 - admin endpoints: /healthz, /metrics, /docs
 
 ## Quickstart (local)
+At veryfirst clone the repo : git clone https://github.com/A-A-D-I-C-O-D-E/Contract-Intelligence-API.git
 1. Create a python env (or use Docker).
 2. Install: `pip install -r requirements.txt`
-3. Run: `uvicorn app.main:app --reload --host 0.0.0.0 --port 8000`
+3. Run: `uvicorn app.main:app --reload `
 4. Open Swagger: http://localhost:8000/docs
 
-## Using Docker
 
-
-cd docker
-docker-compose up --build
-
-
-## Environment variables
-- `EMBED_MODEL` (defaults to `sentence-transformers/all-MiniLM-L6-v2`)
-- `OPENAI_API_KEY` (optional — improves extraction & final answer quality)
-
-## File upload example (curl)
-
-
-curl -X POST "http://localhost:8000/api/ingest
-"
--F "files=@/path/to/contract1.pdf"
--F "files=@/path/to/contract2.pdf"
 
 
 ## Ask example
@@ -71,11 +55,10 @@ Retrieval uses sentence-transformers + FAISS; embeddings persisted to data/vecs.
 SQLite is used for metadata for simplicity; production should use Postgres + managed vector DB.
 
 
----
+```
 
-## `DESIGN.md`
-```markdown
-# Design (<= 2 pages) — Contract Intelligence API
+
+
 
 ## Architecture
 - FastAPI app with modular routers (`app/api/*`).
@@ -136,10 +119,7 @@ SQLite is used for metadata for simplicity; production should use Postgres + man
 - embedding
 - token_len
 
-## 3. Chunking Rationale
-- 350–450 character chunks
-- 50–70 character overlap
-- Sliding window algorithm
+
 
 ## 4. Retrieval Strategy
 - Top-k FAISS search (k=6)
@@ -160,9 +140,4 @@ Prompt template ensures grounded answers.
 
 ## 8. Observability
 - Log performance, not document content
-"""
 
-output_path = "/mnt/data/rag_design_doc.md"
-convert_text(md_content, 'md', format='md', outputfile=output_path, extra_args=['--standalone'])
-
-output_path
