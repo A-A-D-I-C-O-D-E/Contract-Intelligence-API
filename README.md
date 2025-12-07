@@ -112,3 +112,57 @@ SQLite is used for metadata for simplicity; production should use Postgres + man
 - Add authentication (API keys / OAuth), rate-limiting, request size limits.
 - Move PDF blob storage to S3, vector DB to Milvus/Pinecone/Weaviate for scale.
 - Sanitize extracted text, avoid storing PII in plain sight when not required.
+
+### Components
+- FastAPI Gateway
+- RAG Engine (retriever + LLM)
+- Vector Store (FAISS CPU)
+- Document Parser (PyMuPDF)
+- LLM Layer (OpenAI GPT)
+
+## 2. Data Model
+
+### Document Table
+- id (UUID)
+- file_name
+- source_type
+- uploaded_at
+
+### Chunk Table
+- chunk_id
+- document_id
+- chunk_text
+- page_num
+- embedding
+- token_len
+
+## 3. Chunking Rationale
+- 350–450 character chunks
+- 50–70 character overlap
+- Sliding window algorithm
+
+## 4. Retrieval Strategy
+- Top-k FAISS search (k=6)
+- Optional re-ranking
+
+## 5. Answer Generation Logic
+Prompt template ensures grounded answers.
+
+## 6. Fallback Behaviors
+- No chunks → “No relevant content found.”
+- Missing docs → Upload required.
+
+## 7. Security Considerations
+- File scanning
+- PII masking
+- Auth + rate limiting
+- Prevent prompt injection
+
+## 8. Observability
+- Log performance, not document content
+"""
+
+output_path = "/mnt/data/rag_design_doc.md"
+convert_text(md_content, 'md', format='md', outputfile=output_path, extra_args=['--standalone'])
+
+output_path
